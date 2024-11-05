@@ -7,23 +7,42 @@
     <!-- Link to Google Fonts for Syne -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap">
     <style>
+        /* General Styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #000; /* Black background */
             color: #fff; /* White text */
-        }
-        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             text-align: center;
-            padding: 20px;
+        }
+        
+        header {
             font-size: 2em;
             font-family: 'Syne', sans-serif;
             font-weight: bold;
+            padding: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.5em; /* Slightly smaller font for tablet and small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.2em; /* Even smaller font for mobile screens */
+            }
         }
     </style>
 </head>
 <body>
     <header>PROJECT B</header>
-    <!-- Additional content goes here -->
 </body>
 </html>
+
