@@ -7,26 +7,121 @@
     <!-- Link to Google Fonts for Syne -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap">
     <style>
+        /* General Styling */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        header {
-            text-align: center;
+
+        /* Split screen layout */
+        .container {
+            display: flex;
+            width: 80%;
+            height: 80%;
+            border: 2px solid #fff;
+        }
+
+        .left, .right {
+            width: 50%;
             padding: 20px;
-            font-size: 2em;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            border-right: 2px solid #fff;
+            text-align: center;
+        }
+
+        header {
             font-family: 'Syne', sans-serif;
             font-weight: bold;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+
+        .item-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.5em;
+            text-align: left;
+        }
+
+        .item-list li {
+            margin: 15px 0;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .item-list li:hover {
+            color: #00ffcc; /* Retro green highlight on hover */
+        }
+
+        /* Right side styling */
+        .image-display {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-display img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+
+        /* Selected image styling */
+        .active {
+            display: block;
         }
     </style>
 </head>
 <body>
-    <header>PROJECT B</header>
-    <!-- Additional content goes here -->
+    <div class="container">
+        <!-- Left Side: Header and List of Items -->
+        <div class="left">
+            <header>PROJECT B</header>
+            <ul class="item-list">
+                <li onclick="showImage('scan1')">SCAN 1</li>
+                <li onclick="showImage('scan2')">SCAN 2</li>
+                <li onclick="showImage('scan3')">SCAN 3</li>
+            </ul>
+        </div>
+
+        <!-- Right Side: Image Display -->
+        <div class="right">
+            <div class="image-display">
+                <img id="scan1" src="scan1.jpg" alt="Scan 1 Image">
+                <img id="scan2" src="scan2.jpg" alt="Scan 2 Image">
+                <img id="scan3" src="scan3.jpg" alt="Scan 3 Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showImage(scanId) {
+            // Hide all images
+            document.querySelectorAll('.image-display img').forEach(img => img.classList.remove('active'));
+
+            // Show the selected image
+            document.getElementById(scanId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
 
 
 
