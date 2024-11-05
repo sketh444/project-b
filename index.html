@@ -16,15 +16,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
             height: 100vh;
             overflow: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            font-family: 'Syne', sans-serif;
+            font-weight: bold;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         /* Container for split screen layout */
         .container {
             display: flex;
             width: 80%;
-            height: 80%;
+            height: 70%;
             border: 2px solid #fff;
         }
 
@@ -39,18 +49,10 @@
             justify-content: center;
         }
 
-        /* Styling for the left side with header and list */
+        /* Left side with list */
         .left {
             border-right: 2px solid #fff;
             text-align: center;
-        }
-
-        /* Header styling */
-        header {
-            font-family: 'Syne', sans-serif;
-            font-weight: bold;
-            font-size: 2.5em; /* Adjust font size to match the screenshot */
-            margin-bottom: 40px;
         }
 
         /* List styling */
@@ -59,7 +61,7 @@
             padding: 0;
             font-size: 1.5em;
             text-align: left;
-            line-height: 2em; /* Space between list items */
+            line-height: 2em;
         }
 
         .item-list li {
@@ -72,7 +74,7 @@
             color: #00ffcc; /* Retro green highlight on hover */
         }
 
-        /* Right side styling for the image display */
+        /* Right side styling for image display */
         .image-display {
             width: 100%;
             height: 100%;
@@ -94,10 +96,13 @@
     </style>
 </head>
 <body>
+    <!-- Header spanning the top -->
+    <header>PROJECT B</header>
+
+    <!-- Split screen container below the header -->
     <div class="container">
-        <!-- Left Side: Header and List of Items -->
+        <!-- Left Side: List of Items -->
         <div class="left">
-            <header>PROJECT B</header>
             <ul class="item-list">
                 <li onclick="showImage('scan1')">SCAN 1</li>
                 <li onclick="showImage('scan2')">SCAN 2</li>
